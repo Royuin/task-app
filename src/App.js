@@ -14,8 +14,13 @@ class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const taskValue = document.getElementById('task').value;
+    const taskId = this.state.tasks.length;
+    const thisTask = {
+      taskValue,
+      taskId,
+    };
     this.setState({
-      tasks: [...this.state.tasks, taskValue],
+      tasks: [...this.state.tasks, thisTask],
     });
   }
 
