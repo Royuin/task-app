@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Overview handleSubmit={this.handleSubmit} tasks={this.tasks} />
+        <Overview handleSubmit={this.handleSubmit} state={this.state} />
       </div>
     );
   }
