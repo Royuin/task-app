@@ -8,7 +8,11 @@ class Overview extends Component {
   }
 
   renderTasks = () => {
-    console.log(this.props.state.tasks);
+    let tasksArray = this.props.state.tasks;
+    const taskItems = tasksArray.map((task) => {
+      return <li key={task.taskId}>{task.taskValue} </li>;
+    });
+    return <ul>{taskItems}</ul>;
   };
 
   render() {
@@ -19,6 +23,8 @@ class Overview extends Component {
           handleSubmit={this.props.handleSubmit}
           renderTasks={this.renderTasks}
         />
+        <h2>Tasks</h2>
+        {this.renderTasks()}
       </>
     );
   }
